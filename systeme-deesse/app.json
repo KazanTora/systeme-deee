@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "Système",
+    "slug": "systeme-deesse",
+    "scheme": "systeme",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#03060F",
+    "ios": {
+      "bundleIdentifier": "com.yann.systeme",
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSHealthShareUsageDescription": "Le Système lit tes pas et ton sommeil pour calculer ta Vitalité.",
+        "NSHealthUpdateUsageDescription": "Le Système n’écrit rien dans Santé, mais iOS exige cette mention."
+      },
+      "entitlements": {
+        "com.apple.developer.healthkit": true
+      }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      "expo-font",
+      ["expo-notifications", { "color": "#3DB8FF" }],
+      ["react-native-health", {
+        "isClinicalDataEnabled": false,
+        "healthSharePermission": "Le Système lit tes pas et ton sommeil pour calculer ta Vitalité.",
+        "healthUpdatePermission": "Le Système n’écrit rien dans Santé."
+      }]
+    ],
+    "experiments": { "typedRoutes": false }
+  }
+}
